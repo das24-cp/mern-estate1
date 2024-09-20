@@ -1,13 +1,25 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import About from "./pages/About";
+import Profile from "./pages/Profile";
+import Header from "./components/Header";
 
-
-function App() {
-
-
+const App=()=> {
   return (
-    <>
-    <h1 className='text-blue-600'>Hello</h1>
-      
-    </>
+    
+    <BrowserRouter>
+    <Header/>
+    <Routes>
+      <Route path="/" element={<Home />}/>
+      <Route path="/SignIn" element={<SignIn />}/>
+      <Route path="/SignUp" element={<SignUp />}/>
+      <Route path="/About" element={<About />}/>
+      <Route path="/Profile" element={<Profile />}/>
+    </Routes>
+    </BrowserRouter>
+     
   )
 }
 
